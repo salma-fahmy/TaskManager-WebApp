@@ -1,0 +1,51 @@
+/* ==================== HEADER ==================== */
+.main-header {
+  height: 60px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* USER INFO */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header-user:hover {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+/* Gradient Text for Username */
+.header-username {
+  font-weight: 600;
+  font-size: 20px;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* User Icon */
+.header-user-icon {
+  font-size: 28px;
+  color: #6c5ce7; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

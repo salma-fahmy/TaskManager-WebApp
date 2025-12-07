@@ -1,0 +1,59 @@
+.statistics-card {
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 150px;
+  flex-grow: 1;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 10px;
+}
+
+.statistics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.statistics-card h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.statistics-card p {
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Gradients حسب ترتيب البطاقة */
+.statistics-card:nth-child(1) {
+  background: linear-gradient(135deg, #ff6b6b, #ff8787); 
+}
+
+.statistics-card:nth-child(2) {
+  background: linear-gradient(135deg, #6a89cc, #4a69bd); 
+}
+
+.statistics-card:nth-child(3) {
+  background: linear-gradient(135deg, #1dd1a1, #10ac84); 
+}
+
+.statistics-card:nth-child(4) {
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7); 
+}
+
+.statistics-card:nth-child(5) {
+  background: linear-gradient(135deg, #ff9f43, #ff6b00); 
+}
+
+
+.statistics-card:nth-child(6) {
+  background: linear-gradient(135deg, #f368e0, #ff6b81); 
+}
+
+.statistics-card:nth-child(7) {
+  background: linear-gradient(135deg, #00d2d3, #00b894); 
+}

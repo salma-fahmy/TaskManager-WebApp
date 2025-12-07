@@ -1,0 +1,50 @@
+.task-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.task-card h4 {
+  margin: 0 0 10px 0;
+}
+
+.task-card p {
+  margin: 5px 0;
+}
+
+.task-card .status {
+  font-weight: 600;
+}
+
+.task-card .assignee {
+  font-weight: 500;
+  color: black;
+}
+
+.task-card .assignee.unassigned {
+  color: gray;
+}
+
+.task-card .view-task-btn {
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-card .view-task-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

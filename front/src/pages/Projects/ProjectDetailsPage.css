@@ -1,0 +1,120 @@
+/* =============== Page Container =============== */
+/* Adds padding around the entire project details page */
+.project-details-container {
+  padding: 20px;
+}
+
+/* =============== Project Info Card =============== */
+/* White card displaying project information with a left colored border and subtle shadow */
+.project-info-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 5px solid #6c5ce7;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* Project title styling with gradient text */
+.project-title {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Project description styling */
+.project-desc {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Assigned users text */
+.assigned-users {
+  font-size: 14px;
+  color: #444;
+}
+
+/* =============== Tasks Section =============== */
+/* Card container for tasks with shadow and rounded corners */
+.tasks-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Header section for tasks with title and add button aligned */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Tasks title with gradient text */
+.tasks-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Empty state message for no tasks */
+.empty-tasks {
+  color: #777;
+  padding: 10px 0;
+}
+
+/* =============== Buttons =============== */
+/* Primary action button styling */
+.primary-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for primary buttons */
+.primary-btn:hover {
+  background: linear-gradient(135deg, #5b4bd9, #9384ff);
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* =============== Loading & Error Messages =============== */
+/* Styling for loading text */
+.loading-text {
+  color: #666;
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Styling for error messages */
+.error-text {
+  color: red;
+  padding: 20px;
+}
+
+/* =============== Responsive ======= */
+/* Adjust layout on smaller screens */
+@media (max-width: 768px) {
+  /* Stack tasks header vertically and add spacing */
+  .tasks-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Make primary buttons full width on mobile */
+  .primary-btn {
+    width: 100%;
+  }
+}

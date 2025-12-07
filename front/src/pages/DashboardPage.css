@@ -1,0 +1,99 @@
+.dashboard-container {
+  padding: 20px; /* Add padding around the dashboard content */
+  min-height: 100%; /* Ensure the container takes at least full height */
+}
+
+.dashboard-title {
+  margin-bottom: 20px; /* Space below the main title */
+}
+
+.statistics-cards {
+  display: flex; /* Use flexbox to align statistics cards */
+  gap: 20px; /* Space between each card */
+  flex-wrap: wrap; /* Wrap cards to the next line if needed */
+  margin-bottom: 30px; /* Space below the cards */
+}
+
+.charts-section {
+  display: grid; /* Use CSS grid to arrange charts */
+  grid-template-columns: 2fr 1fr; /* Main chart takes 2/3, secondary 1/3 */
+  gap: 20px; /* Space between columns */
+  align-items: start; /* Align items to the top */
+}
+
+/* Single column layout for Pie Chart if only one chart is displayed */
+.charts-section.single-chart {
+  grid-template-columns: 1fr;
+}
+
+.main-chart {
+  background-color: #fff; /* White background for the chart container */
+  padding: 20px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  
+  /* Minimum height to ensure Pie Chart is fully visible */
+  min-height: 450px;  
+  position: relative; /* Position relative for chart overlays */
+}
+
+.main-chart h3 {
+  margin-bottom: 20px; /* Space below chart title */
+  font-size: 18px; /* Font size for title */
+  font-weight: 600; /* Slightly bold title */
+}
+
+.no-tasks {
+  height: 300px; /* Fixed height for empty state */
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  color: #999; /* Gray text for empty state */
+}
+
+.team-performance-container {
+  background-color: #fff; /* White background for team performance panel */
+  padding: 20px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  max-height: 640px; /* Limit height and allow scrolling */
+  overflow-y: auto; /* Vertical scrolling if content exceeds max height */
+}
+
+.team-performance-container h3 {
+  margin-bottom: 20px; /* Space below section title */
+  font-size: 18px; /* Font size for title */
+  font-weight: 600; /* Slightly bold title */
+}
+
+.team-members-list {
+  display: flex; /* Use flexbox to arrange members vertically */
+  flex-direction: column; /* Stack members vertically */
+  gap: 15px; /* Space between members */
+}
+
+.no-team-members {
+  color: #999; /* Gray text for no team members */
+  text-align: center; /* Center text horizontally */
+}
+
+.dashboard-loading,
+.dashboard-error {
+  padding: 20px; /* Inner padding for loading/error states */
+  text-align: center; /* Center content horizontally */
+}
+
+.dashboard-error {
+  color: red; /* Red text for errors */
+}
+
+/* Pie Chart Container */
+.productivity-chart {
+  width: 100%; /* Full width of container */
+  height: 100%; /* Full height of container */
+  min-height: 550px;  /* Ensure minimum height for Pie Chart */
+  display: flex; /* Flex container to center chart */
+  align-items: center; /* Center chart vertically */
+  justify-content: center; /* Center chart horizontally */
+  position: relative; /* Relative positioning for chart elements */
+}

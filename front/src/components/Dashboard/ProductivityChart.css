@@ -1,0 +1,36 @@
+.productivity-chart {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;   /* Ensures the chart is always visible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ==================== Loading & Empty States ==================== */
+.chart-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 350px; /* Matches chart height for consistent layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.chart-placeholder p {
+  margin: 0;
+}
+
+/* ==================== Responsive Styling ==================== */
+@media (max-width: 768px) {
+  .productivity-chart {
+    height: 40vh;
+    max-height: 40vh;
+    min-height: 40vh;  
+  }
+}

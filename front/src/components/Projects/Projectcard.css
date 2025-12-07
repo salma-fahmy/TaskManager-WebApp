@@ -1,0 +1,55 @@
+/* ==================== Project Card ==================== */
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  min-height: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid #6c5ce7; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.project-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.project-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Button */
+.project-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: linear-gradient(135deg, #5b4bd9, #9384ff);
+  transform: translateY(-2px);
+}

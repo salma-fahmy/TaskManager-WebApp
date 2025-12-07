@@ -1,0 +1,94 @@
+/* الحاوية العامة */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f0fa; /* بنفسجي فاتح */
+  font-family: Arial, sans-serif;
+}
+
+/* الصندوق الأبيض */
+.auth-box {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* العنوان */
+.auth-box h2 {
+  color: #5b3c88; /* بنفسجي متوسط */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* الفورم */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555555;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #8e63c0;
+  box-shadow: 0 0 5px rgba(142, 99, 192, 0.5);
+}
+
+/* الخطأ */
+.error-msg {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* زر الدخول */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #5b3c88;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #7d5ba6;
+}
+
+/* الروابط */
+.text-center {
+  text-align: center;
+  margin-top: 10px;
+  color: #555555;
+}
+
+.text-center a {
+  color: #5b3c88;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}

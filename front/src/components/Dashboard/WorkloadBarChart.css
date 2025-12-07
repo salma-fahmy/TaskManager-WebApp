@@ -1,0 +1,25 @@
+.workload-chart-wrapper {
+  width: 100%;
+  height: 560px;
+  min-height: 350px;
+}
+
+.workload-chart-wrapper.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.chart-grid line {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+.chart-yaxis text {
+  font-size: 12px;
+}
+
+.chart-legend {
+  padding-top: 10px;
+}

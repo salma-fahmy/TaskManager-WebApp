@@ -1,0 +1,184 @@
+/* =============== Page Container =============== */
+/* Main wrapper for the task details page */
+.task-details-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =============== Task Info Card =============== */
+/* Card displaying task title and description */
+.task-info-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 5px solid #6c5ce7; /* accent border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle shadow */
+  margin-bottom: 25px;
+}
+
+/* Task title styling with gradient text */
+.task-details-page h2 {
+  margin: 0 0 15px 0;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Paragraphs for task details */
+.task-details-page p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* =============== Status Badge =============== */
+/* Small badge showing the status of the task */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #444;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* =============== Comments Section =============== */
+/* Container for comments under the task */
+.comments-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+/* Comments section title with gradient */
+.comments-section h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Paragraphs inside comments section */
+.comments-section p {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* Textarea for adding a new comment */
+.comments-section textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+  margin-top: 5px;
+}
+
+/* Button to submit a comment */
+.comments-section button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for comments button */
+.comments-section button:hover {
+  background: linear-gradient(135deg, #5b4bd9, #9384ff);
+  transform: translateY(-2px);
+}
+
+/* =============== Attachments Section =============== */
+/* Container for task attachments */
+.attachments-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+/* Title for attachments section */
+.attachments-section h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* File input styling */
+.attachments-section input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Button for uploading attachments */
+.attachments-section button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for attachment buttons */
+.attachments-section button:hover {
+  background: linear-gradient(135deg, #5b4bd9, #9384ff);
+  transform: translateY(-2px);
+}
+
+/* List of uploaded attachments */
+.attachments-section ul {
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.attachments-section li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* Links to download attachments */
+.attachments-section a {
+  color: #6c5ce7;
+  text-decoration: none;
+}
+
+.attachments-section a:hover {
+  text-decoration: underline;
+}
+
+/* =============== Responsive =============== */
+/* Adjust layout and button widths on smaller screens */
+@media (max-width: 768px) {
+  .task-details-page {
+    padding: 15px;
+  }
+
+  .comments-section, .attachments-section {
+    padding: 15px;
+  }
+
+  .comments-section button, .attachments-section button {
+    width: 100%;
+  }
+}

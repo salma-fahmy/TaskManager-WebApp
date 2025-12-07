@@ -1,0 +1,97 @@
+/* =============== Page Container =============== */
+/* Main wrapper for the task form page */
+.task-form-page {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =============== Page Title =============== */
+/* Title styling with gradient text */
+.task-form-page h2 {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+/* =============== Form =============== */
+/* Main form container with vertical layout and spacing */
+.task-form-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Label styling */
+.task-form-page label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Input and select fields */
+.task-form-page input[type="text"],
+.task-form-page input[type="date"],
+.task-form-page select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* Focus state for inputs and select */
+.task-form-page input[type="text"]:focus,
+.task-form-page input[type="date"]:focus,
+.task-form-page select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 4px rgba(106, 17, 203, 0.4);
+}
+
+/* =============== Error Message =============== */
+/* Styling for validation or error messages */
+.error-message {
+  color: red;
+  font-weight: 600;
+}
+
+/* =============== Submit Button =============== */
+/* Button for submitting the form */
+.task-form-page button[type="submit"] {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  transition: 0.3s;
+}
+
+/* Hover effect for submit button */
+.task-form-page button[type="submit"]:hover {
+  opacity: 0.85;
+}
+
+/* =============== Responsive =============== */
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .task-form-page {
+    padding: 20px;
+  }
+
+  .task-form-page button[type="submit"] {
+    width: 100%;
+  }
+}

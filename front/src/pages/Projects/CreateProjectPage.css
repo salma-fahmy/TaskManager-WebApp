@@ -1,0 +1,170 @@
+/* ===== Page Wrapper ===== */
+/* Centers the project creation card and gives a light background */
+.create-project-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f4f6fb;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* ===== Main Card ===== */
+/* White card containing the form with rounded corners and shadow */
+.create-project-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== Title ===== */
+/* Gradient-colored heading, centered and bold */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent; /* Makes gradient visible on text */
+  margin-bottom: 25px;
+}
+
+/* ===== Form Styling ===== */
+/* Vertical layout with spacing between fields */
+.create-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Input Fields ===== */
+/* Common styling for text inputs and textarea */
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+/* Focus effect for input fields */
+.input-field:focus,
+.textarea-field:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+}
+
+/* Textarea specific styling */
+.textarea-field {
+  min-height: 120px;
+  resize: vertical; /* Allows vertical resizing */
+}
+
+/* ===== Members List ===== */
+/* Container for team members checkboxes */
+.members-list {
+  background: #f8f8fa;
+  padding: 12px;
+  border-radius: 10px;
+  max-height: 220px;
+  overflow-y: auto; /* Scrollable if too many members */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Individual member checkbox styling */
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Highlight selected member */
+.checkbox-item.selected {
+  background: rgba(106, 17, 203, 0.1);
+}
+
+/* Member name text */
+.member-name {
+  font-weight: 600;
+}
+
+/* Optional member role text */
+.member-role {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Message when no members are available */
+.no-members {
+  text-align: center;
+  color: #777;
+}
+
+/* ===== Buttons ===== */
+/* Submit button with gradient background */
+.submit-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Hover effect for submit */
+.submit-btn:hover {
+  opacity: 0.85;
+}
+
+/* Cancel button styling */
+.cancel-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Hover effect for cancel button */
+.cancel-btn:hover {
+  background: #eee;
+}
+
+/* ===== Error Text ===== */
+/* Red error messages for form validation */
+.error-msg {
+  color: red;
+  font-weight: 600;
+}
+
+/* ===== Loading & Permission Screens ===== */
+/* Centered containers for loading or access denied messages */
+.loading-container,
+.access-denied-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Button to navigate back to dashboard */
+.go-dashboard-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: #2575fc;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}

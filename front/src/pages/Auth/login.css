@@ -1,0 +1,341 @@
+/* ====== Global Colors ====== */
+:root {
+  --gradient-start: #a18aff; /* Purple gradient start */
+  --gradient-end: #b2e0ff;   /* Baby Blue gradient end */
+
+  --white: #ffffff;           /* White color */
+  --text-dark: #222;          /* Dark text color */
+  --text-light: #555;         /* Light text color */
+  --error-red: #d9534f;       /* Red color for errors */
+  --error-bg: rgba(255, 230, 230, 0.7); /* Light red background for error box */
+}
+
+/* ====== Full Page Background ====== */
+html, body {
+  height: 100%;               /* Full height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;    /* Center horizontally */
+  align-items: flex-start;    /* Align at the top, we'll add padding to move down */
+  padding-top: 60px;          /* Space from top */
+  min-height: 100vh;          /* Ensure full viewport height */
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end)); /* Background gradient */
+  font-family: 'Poppins', sans-serif; /* Global font */
+}
+
+/* ====== Page Wrapper (Slightly Transparent White Box) ====== */
+.login-page {
+  max-width: 400px;           /* Max width */
+  width: 100%;
+  margin: 200px auto 0 auto;  /* Top margin 200px, center horizontally */
+  padding: 30px;              /* Inner padding */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 12px;        /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(160, 138, 255, 0.25); /* Shadow for depth */
+  animation: fadeIn 0.6s ease; /* Fade-in animation */
+  text-align: left;           /* Align text left */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== Title Styling ====== */
+.login-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--gradient-start); /* Gradient color for title */
+}
+
+/* ====== Form Fields ====== */
+.form-group {
+  margin-bottom: 20px; /* Space between fields */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid rgba(160, 138, 255, 0.5);
+  border-radius: 6px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.8); /* Slightly transparent input background */
+  transition: all 0.3s ease; /* Smooth hover/focus transitions */
+}
+
+.form-group input:focus {
+  border-color: var(--gradient-start);
+  box-shadow: 0 0 6px rgba(161, 138, 255, 0.4);
+  outline: none;
+}
+
+/* ====== Error Box ====== */
+.error-box {
+  padding: 12px;
+  margin-bottom: 20px;
+  background: var(--error-bg); /* Light red background */
+  color: var(--error-red);
+  border-radius: 6px;
+  font-size: 14px;
+  border-left: 4px solid var(--error-red); /* Red border indicator */
+}
+
+/* ====== Login Button ====== */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+}
+
+.login-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed; /* Disabled button style */
+}
+
+/* ====== Links Section ====== */
+.links-section {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.links-section a {
+  color: var(--gradient-end);
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.links-section a:hover {
+  color: var(--gradient-start);
+}
+
+/* ====== Responsive for Small Screens ====== */
+@media (max-width: 480px) {
+  .login-page {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+}
+
+/* ===== Signup Page Styling ===== */
+.signup-page {
+  max-width: 400px;
+  width: 100%;
+  margin: 80px auto 0 auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(160, 138, 255, 0.25);
+  animation: fadeIn 0.6s ease;
+  text-align: left;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gradient-start);
+  margin-bottom: 25px;
+}
+
+/* Role selection section */
+.role-section {
+  margin: 15px 0;
+}
+
+.role-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.role-option {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.role-option input {
+  margin-right: 6px;
+}
+
+/* Error + Success Messages */
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success-msg {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Signup Button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.signup-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+}
+
+.signup-btn:disabled {
+  background: #ccc;
+}
+
+.signup-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== Reset Password Page Styling ===== */
+.reset-password-page {
+  max-width: 400px;
+  width: 100%;
+  margin: 80px auto 0 auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(160, 138, 255, 0.25);
+  animation: fadeIn 0.6s ease;
+  text-align: left;
+}
+
+.reset-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gradient-start);
+  margin-bottom: 15px;
+}
+
+.reset-info {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+}
+
+/* Reset Button */
+.reset-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+}
+
+.reset-btn:disabled {
+  background: #ccc;
+}
+
+.reset-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== Forgot Password Page Styling ===== */
+.forgot-password-page {
+  max-width: 400px;
+  width: 100%;
+  margin: 200px auto 0 auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(160, 138, 255, 0.25);
+  animation: fadeIn 0.6s ease;
+  text-align: left;
+}
+
+.forgot-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gradient-start);
+  margin-bottom: 15px;
+}
+
+.forgot-info {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+}
+
+/* Forgot Button */
+.forgot-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.forgot-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+}
+
+.forgot-btn:disabled {
+  background: #ccc;
+}
+
+.forgot-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}

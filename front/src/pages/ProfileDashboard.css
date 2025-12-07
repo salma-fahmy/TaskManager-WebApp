@@ -1,0 +1,739 @@
+/*
+===================================================================
+GLOBAL LAYOUT AND ROOT VARIABLES
+===================================================================
+*/
+
+/*
+Ensures the entire page (html, body) and the main application container take up 100% of the viewport 
+height and width, preventing any overall scrolling.
+*/
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+/*
+Defines core color variables for the Light Mode theme, emphasizing purple/blue hues for a professional appearance.
+Includes primary colors, text/background colors, and standard utility colors (danger/success).
+*/
+:root {
+    /* Primary Colors & Accent */
+    --primary-color: #6c5ce7; 
+    --primary-hover: #5b4bd9; 
+    --accent-color: #a29bfe; 
+
+    /* Text and Background Colors - LIGHT MODE */
+    --text-color: #212529; 
+    --secondary-color: #495057; 
+    --bg-light: #f8f9fa; 
+    --card-bg: #ffffff; 
+    --border-color: #e9ecef; 
+
+    /* Gradient Variables */
+    --gradient-start: #a29bfe; 
+    --gradient-end: #6c5ce7; 
+    
+    /* Defines the default primary gradient direction and hover state */
+    --primary-gradient: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    --primary-gradient-hover: linear-gradient(135deg, #9384ff 0%, #5b4bd9 100%); 
+
+    /* Standard Utility Colors */
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+/* Reinforces the full-screen layout for the application container and applies the default light background color 
+and smooth transition effects.
+*/
+html, body, .app-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.app-container {
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sets the main card structure to occupy the full available space, applying the primary background gradient 
+and removing default card margins/shadows for a clean, full-width presentation.
+*/
+.main-card {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden; 
+    background: var(--primary-gradient);
+}
+
+
+/*
+===================================================================
+HEADER STYLING (FULL-WIDTH NAVIGATION)
+===================================================================
+*/
+
+/* Styles the fixed, full-width header area with a distinct background, padding, and subtle shadow 
+to separate it from the main content.
+*/
+.full-width-header {
+    width: 100%;
+    height: 90px;
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding: 0 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; 
+}
+
+
+/* Styles for the user's profile information area within the header. */
+.header-profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Styling for the small circular profile avatar. */
+.profile-avatar-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+
+/* Applies a gradient text effect to the user's name in the header for emphasis. */
+.profile-name-header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--primary-color); 
+}
+.profile-role-header {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+/* Container for all action buttons/utilities in the header. */
+.header-actions-section {
+    display: flex;
+    gap: 10px; 
+    margin-right: 10px; 
+}
+
+.header-utility-actions {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; 
+}
+
+/* Base styling for interactive buttons in the header. */
+.header-action-btn {
+    all: unset;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.header-action-btn:hover {
+    background-color: var(--border-color);
+    color: var(--accent-color);
+}
+
+/* Applies primary gradient and shadow to the active header button. */
+.header-action-btn.active {
+    background: var(--primary-gradient); 
+    color: white; 
+    box-shadow: 0 4px 10px rgba(153, 137, 254, 0.4); 
+}
+.header-action-btn.active:hover {
+    background: var(--primary-gradient-hover);
+    color: white;
+}
+
+/* Styling for the notification count badge overlaid on the bell icon. */
+.notification-badge-header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.theme-toggle-btn .theme-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/*
+===================================================================
+MAIN CONTENT AREA & VIEW TRANSITIONS
+===================================================================
+*/
+
+/* Container for the content below the header, ensuring it takes the remaining height 
+and controls overflow to prevent global scroll.
+*/
+.dashboard-content-main {
+    flex-grow: 1;
+    padding: 40px; 
+    position: relative;
+    height: calc(100% - 90px); 
+    box-sizing: border-box;
+    overflow-y: hidden; 
+}
+
+
+/* Base style for different profile views (e.g., info vs. notifications), defining entry/exit transitions. */
+.profile-view-content {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateX(-20px);
+    display: none; 
+}
+
+/* Active state for the profile view, making it visible and animating its entry. */
+.profile-view-content.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block; 
+}
+
+
+/*
+===================================================================
+PERSONAL INFORMATION SECTION
+===================================================================
+*/
+
+.personal-info-section {
+    padding-bottom: 30px;
+}
+
+/* Layout for section headers that include action buttons (e.g., notifications toggle). */
+.section-header-with-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 25px; 
+}
+
+/* Styling for the main section title, applying a gradient text effect and a primary border. */
+.section-header-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0; 
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--primary-color); 
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 5px;
+    flex-shrink: 1; 
+}
+
+
+/* Container for action buttons within a section header. */
+.header-actions {
+    display: flex;
+    gap: 10px; 
+    flex-shrink: 0; 
+}
+
+/* Grid layout for displaying personal information cards. */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+}
+
+/* Styling for individual information display cards. */
+.info-item-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+
+
+/* Styles for the descriptive label above the information value. */
+.info-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+/* Styles for the actual information value. */
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    word-break: break-all;
+    color: var(--text-color);
+}
+
+/* Horizontal line separator style. */
+.divider-content {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0;
+}
+
+/* Quick Actions Section */
+.other-tasks-section .section-header-title {
+    margin-bottom: 25px;
+}
+
+/* Grid layout for quick action cards. */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+/* Styling for interactive quick action cards. */
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, border-color 0.2s;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 600;
+}
+.action-card:hover {
+    background-color: var(--bg-light);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Styling for icons within action cards. */
+.action-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/*
+===================================================================
+NOTIFICATIONS VIEW (DRILL-DOWN OVERLAY)
+===================================================================
+*/
+
+/* Styles the notifications panel as a full-screen overlay that slides in from the bottom. */
+.notifications-view-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%); 
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto; 
+    z-index: 500;
+}
+
+
+/* Active state for the notifications view, making it visible and animating its slide-up entry. */
+.notifications-view-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+}
+
+/* Styling for the back button, applying the primary gradient. */
+.back-to-profile-btn {
+    all: unset;
+    cursor: pointer;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.back-to-profile-btn:hover {
+    background: var(--primary-gradient-hover);
+}
+
+.notifications-header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.notifications-title {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.notifications-subtitle {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: var(--secondary-color);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Styling for the 'Clear All' button. */
+.clear-all-btn {
+    color: var(--danger-color);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+.clear-all-btn:hover {
+    opacity: 0.8;
+}
+
+/* Container for the scrollable list of notifications. */
+.notifications-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Styling for an individual notification item. */
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: var(--card-bg);
+    cursor: pointer;
+    border-left: 5px solid var(--border-color);
+    transition: background-color 0.2s, border-left-color 0.2s;
+}
+
+.notification-item:hover {
+    background-color: var(--bg-light);
+}
+
+/* Specific styling for unread notifications, giving them a distinct border color and emphasis. */
+.notification-item.is-new {
+    border-left-color: var(--accent-color);
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Styling for the notification icon and its unread dot. */
+.notification-icon {
+    font-size: 1.5rem;
+    position: relative;
+    flex-shrink: 0;
+    padding-top: 3px;
+    color: var(--primary-color);
+}
+
+.item-unread-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--danger-color);
+    border-radius: 50%;
+}
+
+/* Ensures notification body text is legible against the light background. */
+.notification-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color); 
+    font-weight: 400;
+}
+
+.notification-item.is-new p {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Styling for the empty state message when no notifications are present. */
+.empty-state-message {
+    text-align: center;
+    padding: 50px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/*
+===================================================================
+MODALS, TOASTS, AND BUTTONS
+===================================================================
+*/
+
+/* Styles the dark backdrop for all modal windows. */
+.modal-backdrop-center {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Generic styling for all modal content containers (confirmation, password, edit). */
+.confirmation-modal-content, .password-modal-content, .edit-profile-modal-content {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    width: 90%;
+    color: var(--text-color);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+.modal-header-title {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Layout for the form within the password/edit modals. */
+.password-form-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Styling for all form input fields. */
+.form-input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    outline: none; 
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus state styling for form inputs, highlighting with the primary color. */
+.form-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2); 
+}
+
+
+/* Styling for error messages displayed beneath form fields. */
+.form-message.error {
+    color: var(--danger-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: -5px;
+}
+
+/* Layout for action buttons within modals. */
+.modal-actions, .confirmation-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* Primary button style with gradient background. */
+.btn-primary, .update-btn {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.btn-primary:hover, .update-btn:hover {
+    background: var(--primary-gradient-hover);
+}
+
+/* Secondary button style. */
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.btn-secondary:hover {
+    background-color: #d1d9e2;
+}
+
+/* Danger button style for destructive actions. */
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Styles for the temporary toast notification displayed at the top right. */
+.toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001;
+    transition: transform 0.3s ease-out;
+}
+.toast p {
+    margin: 0;
+    font-weight: 500;
+}
+.toast button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.toast.success {
+    background-color: var(--success-color);
+}
+.toast.error {
+    background-color: var(--danger-color);
+}
+
+/* Styles the backdrop for the centered flash success message. */
+.flash-backdrop-center {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    pointer-events: none;
+}
+/* Styles the content of the centered flash message, applying the primary gradient and an entry animation. */
+.flash-message-content {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    font-weight: 600;
+    animation: flash-in 0.3s ease-out;
+}
+.flash-message-content p {
+    margin: 0;
+}
+
+/* Defines the animation for the centered flash message appearance. */
+@keyframes flash-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
