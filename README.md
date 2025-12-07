@@ -8,11 +8,10 @@ A centralized task and project management system designed to improve team collab
 
 | Name                     | ID        |
 |--------------------------|-----------|
-| Sabah Ahmed Mohammed     | 22010356  |
-| Reem Rafik Nagib         | 22010342  |
 | Salma Fahmy Hassan       | 22010346  |
 | Rahma Ramadan Hassan     | 22010334  |
-| Kenzy Ashraf Abd-Elshafy | 22011604  |
+| Sabah Ahmed Mohammed     | 22010356  |
+| Reem Rafik Nagib         | 22010342  |
 
 ---
 
